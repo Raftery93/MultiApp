@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+		<ion-header-bar class="bar-assertive">
+			<h1 class="title">Multi App</h1>
+		</ion-header-bar>
+		<div class="bar bar-subheader bar-dark"> 
+			<h2 class="title">Calculator</h2>
+		</div>
+     <ion-content>
+	 	<br>
+		<br>
+		<br>
+		<!-- input for Celsius -->
+		<p><input id="c" onkeyup="convert('C')"> degrees Celcius</p>
+		
+		<!-- input for Fahrenheit -->
+		<p><input id="f" onkeyup="convert('F')"> degrees Fahrenheit</p>
+
+		<div class="padding text-center">
+			<!-- button to display local storage -->
+			<button onclick="showConHistory()" class="
+			button button-outline icon-right
+			ion-ios-settings-strong button-dark">Show History</button>
+		</div>
+		
+		<!-- output for session storage - only works on desktop -->
+		<h3 id="conOutputF">Conversion =</h3>
+		<h3 id="conOutputC">Conversion =</h3>
+		
+		<!-- output for local sotrage - only works on desktop -->
+		<textarea id="textareaOutput" rows="4" col="50"></textarea>
+</ion-content>
+
+			<!-- Footer -->
+			<ion-footer-bar class="bar-calm">
+			<div class="tabs-striped tabs-color-assertive">
+				<div class="tabs">
+					<a class="tab-item active" href="calculator.html">
+						<i class="icon ion-calculator"></i>
+						Test
+					</a>
+					<a class="tab-item" href="index.html">
+						<i class="icon ion-camera"></i>
+						Favorites
+					</a>
+					<a class="tab-item" href="locator.html">
+						<i class="icon ion-android-map"></i>
+						Settings
+					</a>
+				</div>
+			</div>
+			</ion-footer-bar>
+
+	  
+	  
+    </ion-pane>
+  </body>
+</html>
